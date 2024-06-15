@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser')
 const express = require('express')
 require('dotenv').config()
+const port = process.env.PORT || 4000
 
 const main = require('./utils/dbConnect.js')
 const {logIn,leaderboardRes,studentRes}= require('./controller/logic.js')
@@ -28,5 +29,5 @@ app.use((req,res,next)=>{
 })
 
 main().then(result=>{
-    app.listen(3000)
+    app.listen(port)
 })
