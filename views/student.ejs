@@ -1,0 +1,47 @@
+<%- include('./partials/header.ejs',removePath)%>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+
+<style>
+.column td {
+  transform-origin: bottom;
+  animation: revealing-bars 2s linear;
+}
+@keyframes revealing-bars {
+  0%  { transform: scaleY( 0 ); }
+  30% { transform: scaleY( 1 ); }
+}
+
+</style>
+
+<div class="row mt-5 mx-2">
+
+    <div class="col-md-3 col-sm-12 border border-primary p-4">
+        <div class="d-flex flex-column justify-content-center align-items-center"> 
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" height="100" width="100" /></button> 
+            <h5 class="name mt-3"><%=student.name%></h5>
+            <span class="name mt-1"><%=student.rollNumber%></span>
+            <h4 class="name mt-3">Total <%=student.cgpa %></h4>
+        </div> 
+    </div>
+
+    <div class="mx-auto col-md-7 col-sm-12 border border-primary p-1">
+    <h1 class="p-2">Score</h1>
+
+    <div class="w-100 mx-auto">
+        <table class="charts-css column multiple show-labels show-4-secondary-axes data-spacing-5 show-primary-axis show-heading" style="--color:rgba(90, 165, 255,0.7)">
+            <caption class="text-center">Semester wise GPA</caption>
+            <%for (let i=0;i<student.semResults.length;i++){ %>  
+                <% const gpa = student.semResults[i] %>        
+            <tr>
+                <th scope="row"><%= i+1%></th>
+                <td style="--size: <%= +gpa/10 %>"> <span class="data"> <%=gpa %> </span> </td>
+            </tr>  
+            <%  } %>          
+        </table>
+    </div>
+    </div>
+
+</div>
+
+</body>
+</html>

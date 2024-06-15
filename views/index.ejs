@@ -1,0 +1,19 @@
+<%- include('./partials/header.ejs',removePath)%>
+<div class="row">
+    <div class="mx-auto mt-5 border border-primary col-md-6 col-sm-12 p-5">
+      <form action="/login" method="POST">
+        <div class="mb-3">
+          <label for="exampleInput" class="form-label">Roll number</label>
+          <input type="text" class="form-control" id="exampleInput" name="rollnum">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
