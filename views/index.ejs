@@ -1,5 +1,11 @@
 <%- include('./partials/header.ejs',removePath)%>
-<div class="row">
+<style>
+  body{
+    position: fixed;
+}
+</style>
+
+<div class="row p-4">
     <div class="mx-auto mt-5 border border-primary col-md-6 col-sm-12 p-5">
       <form action="/login" method="POST">
         <div class="mb-3">
