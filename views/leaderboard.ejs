@@ -1,4 +1,10 @@
 <%- include('./partials/header.ejs',removePath)%>
+<style>
+    a{
+        all: unset;
+        cursor: pointer;
+    }
+</style>
 
 
 <% for(let i=1;i<11;i++) {%>
@@ -7,7 +13,7 @@
             <div class="d-flex">
                 <% const arr=['🥇','🥈','🥉']%>
                 <h4 class="<%= i<4?"":"px-2"%>"><%= i<4?arr[i-1]:i%></h4>
-                <h4 class="<%= i>=4?"ps-3":"ps-2"%>"><%= student[i-1].name%></h4>
+                <a href="/student/<%=student[i-1].rollNumber%>"><h4 class="<%= i>=4?"ps-3":"ps-2"%>"><%= student[i-1].name%></h4></a>
             </div>
             <div class="d-flex py-2">
                 <%const gpa = student[i-1].cgpa%>
